@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %} Main page {% endblock %}
+
+{% block content %}
+<h1> Create profile </h1>
+
+<form method="post" action="/create_profile">
+    {% csrf_token %}
+    {{ profile_form.as_p }}
+    <input type="submit" value="Add">
+</form>
+{% endblock %}

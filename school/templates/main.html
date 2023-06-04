@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %} Main page {% endblock %}
+
+{% block content %}
+
+<h1> Main page </h1>
+
+{%for i in profile%}
+<h2>--------------</h2>
+Student - {{i}}
+
+{% endfor %}
+
+    {% for profiles in profiles%}
+        <div class="card mb-3">
+            <div class="card-body">
+                {% include 'include/render_single_profile.html'%}
+            </div>
+        </div>
+    {% endfor %}
+
+{% endblock %}
