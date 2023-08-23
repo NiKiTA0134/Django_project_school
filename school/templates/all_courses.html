@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %} Курси {% endblock %}
+
+{% block content %}
+<div class="row mt-5">
+    <div class="col-md-8 offset-md-2">
+        <h1 class="text-center mb-4">Курси</h1>
+
+        {% for course in courses %}
+        <div class="card mb-3">
+            <div class="card-body">
+                <h5 class="card-title">{{ course.name }}</h5>
+                <p class="card-text">Опис - {{ course.title }}</p>
+                <p class="text-muted">Класний керівник - {{ course.class_teacher }}</p>
+            </div>
+        </div>
+        {% endfor %}
+
+    </div>
+</div>
+{% endblock %}

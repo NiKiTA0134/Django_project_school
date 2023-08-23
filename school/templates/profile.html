@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %} User Profile {% endblock %}
+
+{% block content %}
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">Профіль</h2>
+                </div>
+                <div class="card-body">
+                    <p class="card-text"><strong>ПІБ:</strong> {{ user.username }}</p>
+                    <p class="card-text"><strong>Пошта:</strong> {{ user.email }}</p>
+                    <p class="card-text"><strong>Статус:</strong> {{ user.position }}</p>
+                    <p class="card-text"><strong>Номер телефону:</strong> {{ user.phone_number }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

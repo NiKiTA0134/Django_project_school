@@ -3,21 +3,25 @@
 {% block title %} Main page {% endblock %}
 
 {% block content %}
+<h1> Головна сторінка </h1>
 
-<h1> Main page </h1>
+{% if search_query and not courses %}
+<br>
+<h2>Результатів не знайдено. Спробуйте перевірити чи ви написали правильну пошукову інформацію. </h2>
+{% endif %}
 
-{%for i in profile%}
-<h2>--------------</h2>
-Student - {{i}}
-
-{% endfor %}
-
-    {% for profiles in profiles%}
-        <div class="card mb-3">
-            <div class="card-body">
-                {% include 'include/render_single_profile.html'%}
-            </div>
+{% if courses %}
+<ul>
+    {% for course in courses %}
+    <div class="card mb-3">
+        <div class="card-body">
+            <h5 class="card-title">{{ course.name }}</h5>
+            <p class="card-text">Опис - {{ course.title }}</p>
+            <p class="text-muted">Класний керівник - {{ course.class_teacher }}</p>
         </div>
+    </div>
     {% endfor %}
+</ul>
+{% endif %}
 
 {% endblock %}
